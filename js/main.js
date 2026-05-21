@@ -3,42 +3,31 @@ document.addEventListener('DOMContentLoaded', () => {
     initContactForm();
 });
 
-/**
- * Lógica del Carrusel Infinito
- * Clona los elementos para lograr una animación CSS continua y suave
- */
 function initCarousel() {
     const track = document.getElementById('carouselTrack');
     if (!track) return;
     
-    // Clonar los elementos hijos y agregarlos al final para el efecto de bucle infinito
+    // Clonar los elementos hijos y agregarlos al final para el bucle infinito
     const items = [...track.children];
     items.forEach(item => {
         const clone = item.cloneNode(true);
-        // Ocultar al lector de pantalla para evitar lectura duplicada
         clone.setAttribute('aria-hidden', 'true');
         track.appendChild(clone);
     });
 }
 
-/**
- * Lógica del Formulario y Conexión con la API de WhatsApp
- */
 function initContactForm() {
     const form = document.getElementById('waForm');
-    const waNumber = "5491155791196"; // Número en formato internacional, sin el '+'
+    const waNumber = "5491155791196"; 
 
     if (!form) return;
 
     form.addEventListener('submit', (e) => {
-        e.preventDefault(); // Prevenir el envío tradicional (recarga de página)
+        e.preventDefault(); 
 
-        // 1. Validar el formulario
-        if (!validateForm(form)) {
-            return; // Si no es válido, detenemos el proceso
-        }
+        if (!validateForm(form)) return;
 
-        // 2. Extraer y sanitizar datos (Hardening Frontend)
+        // Sanitización (Frontend Hardening)
         const rawData = {
             name: form.name.value,
             brand: form.brand.value,
@@ -49,23 +38,17 @@ function initContactForm() {
 
         const safeData = sanitizeData(rawData);
 
-        // 3. Armar el mensaje para WhatsApp
-        const waMessage = `Hola *Taller Sosa*, quiero pedir un turno.%0A%0A` +
-                          `👤 *Nombre:* ${safeData.name}%0A` +
-                          `🚗 *Vehículo:* ${safeData.brand} ${safeData.model} (Año: ${safeData.year})%0A` +
-                          `🛠 *Consulta:* ${safeData.query}`;
+        // Mensaje humanizado y amigable
+        const rawMessage = `¡Hola equipo de Taller Sosa! 👋 Soy ${safeData.name}.\n\nLes escribo porque necesito hacerles una consulta sobre mi vehículo, es un ${safeData.brand} ${safeData.model} (Año ${safeData.year}). 🚗\n\nLes cuento un poco lo que ando necesitando:\n"${safeData.query}"\n\n¿Me podrían indicar cómo hacemos para coordinar un turno o para que lo revisen? \n¡Quedo a la espera de su respuesta, muchas gracias! 🛠️`;
 
-        // 4. Crear URL final
+        // Codificación segura para URL
+        const waMessage = encodeURIComponent(rawMessage);
         const waUrl = `https://wa.me/${waNumber}?text=${waMessage}`;
 
-        // 5. Redirigir abriendo en una nueva pestaña
         window.open(waUrl, '_blank', 'noopener,noreferrer');
-        
-        // Opcional: limpiar el formulario tras el envío
         form.reset();
     });
 
-    // Añadir validación interactiva al perder el foco
     const inputs = form.querySelectorAll('input, textarea');
     inputs.forEach(input => {
         input.addEventListener('blur', () => {
@@ -74,33 +57,20 @@ function initContactForm() {
     });
 }
 
-/**
- * Funciones de Validación de Seguridad y UX
- */
 function validateForm(form) {
     let isValid = true;
     const inputs = form.querySelectorAll('input[required], textarea[required]');
-    
     inputs.forEach(input => {
-        if (!validateInput(input)) {
-            isValid = false;
-        }
+        if (!validateInput(input)) isValid = false;
     });
-    
     return isValid;
 }
 
 function validateInput(input) {
     let valid = true;
+    if (!input.checkValidity()) valid = false;
 
-    // Validación nativa de HTML5
-    if (!input.checkValidity()) {
-        valid = false;
-    }
-
-    // Validaciones específicas
     if (input.name === 'name') {
-        // Solo letras y espacios
         const regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,50}$/;
         valid = regex.test(input.value.trim());
     }
@@ -108,44 +78,26 @@ function validateInput(input) {
     if (input.name === 'year') {
         const year = parseInt(input.value, 10);
         const currentYear = new Date().getFullYear();
-        if (isNaN(year) || year < 1950 || year > (currentYear + 1)) {
-            valid = false;
-        }
+        if (isNaN(year) || year < 1950 || year > (currentYear + 1)) valid = false;
     }
 
-    // Toggle de clases para mostrar/ocultar estado de error UI
     if (valid) {
         input.classList.remove('invalid');
     } else {
         input.classList.add('invalid');
     }
-
     return valid;
 }
 
-/**
- * Sanitización Básica de Inputs (Frontend Hardening)
- * - Strip tags HTML para prevenir inyección XSS de base
- * - encodeURIComponent se aplica globalmente en la construcción del query, 
- *   pero aquí limpiamos caracteres peligrosos manualmente antes de armar el String.
- */
 function sanitizeData(dataObj) {
     const sanitizedObj = {};
-    const tempElement = document.createElement('div'); // Contenedor para escapar HTML
+    const tempElement = document.createElement('div'); 
 
     for (const key in dataObj) {
         if (dataObj.hasOwnProperty(key)) {
-            let str = dataObj[key];
-            
-            // Reemplazo básico de caracteres peligrosos para evitar escapes en URLs maliciosas
-            str = str.replace(/[<>]/g, ""); // Elimina tags directos
-            
-            // Utilizar TextNode nativo del navegador para escapar entidades
+            let str = dataObj[key].replace(/[<>]/g, ""); 
             tempElement.textContent = str;
-            let escapedStr = tempElement.innerHTML;
-            
-            // Finalmente se codifica con encodeURIComponent para la URL (maneja saltos de línea y símbolos permitidos)
-            sanitizedObj[key] = encodeURIComponent(escapedStr);
+            sanitizedObj[key] = tempElement.innerHTML;
         }
     }
     return sanitizedObj;
