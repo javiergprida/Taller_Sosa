@@ -39,7 +39,14 @@ function initContactForm() {
         const safeData = sanitizeData(rawData);
 
         // Mensaje humanizado y amigable
-        const rawMessage = `¡Hola equipo de Taller Sosa! 👋 Soy ${safeData.name}.\n\nLes escribo porque necesito hacerles una consulta sobre mi vehículo, es un ${safeData.brand} ${safeData.model} (Año ${safeData.year}). 🚗\n\nLes cuento un poco lo que ando necesitando:\n"${safeData.query}"\n\n¿Me podrían indicar cómo hacemos para coordinar un turno o para que lo revisen? \n¡Quedo a la espera de su respuesta, muchas gracias! 🛠️`;
+        const rawMessage = `¡Hola, equipo de Taller Sosa! 👋 Soy ${safeData.name}.
+
+Quería consultarles para coordinar un turno para mi ${safeData.brand} ${safeData.model} (Año ${safeData.year}). 🚗
+
+Les detallo lo que ando necesitando:
+"${safeData.query}"
+
+¿Me avisan qué disponibilidad tienen para que lo revisemos? ¡Muchas gracias! 🛠️`;
 
         // Codificación segura para URL
         const waMessage = encodeURIComponent(rawMessage);
