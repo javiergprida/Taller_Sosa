@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Taller Sosa - Mecánica Integral y Aire Acondicionado en CABA. Turnos por WhatsApp. Expertos en diagnóstico, inyección y mantenimiento de tu vehículo.">
-    <meta name="theme-color" content="#121212">
+    <meta name="theme-color" content="#0a0a0c">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Taller Sosa | Mecánica Integral en CABA">
+    <meta property="og:description" content="Mecánica general, aire acondicionado, diagnóstico avanzado y service. Turnos por WhatsApp.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_AR">
     <title>Taller Sosa | Mecánica Integral y Aire Acondicionado en CABA</title>
     
     <!-- Favicons -->
@@ -14,7 +19,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css">
@@ -40,21 +45,26 @@
         "@type": "GeoCoordinates",
         "latitude": -34.5960,
         "longitude": -58.4410
-      }
+      },
+      "sameAs": [
+        "https://instagram.com/taller.sosa2022",
+        "https://tiktok.com/@taller.sosa"
+      ]
     }
     </script>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
+    <!-- ===================== HEADER ===================== -->
+    <header class="header" id="siteHeader">
         <div class="container header-content">
             <a href="#" class="logo">
-                <img src="./assets/logo_taller_sosa-sin-fondo.png" alt="Logo Taller Sosa" class="header-logo-img">
+                <img src="./assets/logo_taller_sosa-sin-fondo.png" alt="Logo Taller Sosa" class="header-logo-img" width="38" height="38">
                 Taller <span>Sosa</span>
             </a>
             <nav class="nav" aria-label="Navegación Principal">
                 <ul class="nav-list">
                     <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#galeria">Galería</a></li>
                     <li><a href="#marcas">Marcas</a></li>
                     <li><a href="#ubicacion">Ubicación</a></li>
                     <li><a href="#contacto">Contacto</a></li>
@@ -65,10 +75,10 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
+        <!-- ===================== HERO ===================== -->
+        <section class="hero" id="heroSection">
             <div class="container hero-content">
-                <img src="./assets/logo_taller_sosa-sin-fondo.png" alt="Logo Taller Sosa Centro" class="hero-logo-img">
+                <img src="./assets/logo_taller_sosa-sin-fondo.png" alt="Logo Taller Sosa" class="hero-logo-img" width="260" height="260">
                 
                 <h1>Mecánica Integral de <span class="highlight">Confianza</span></h1>
                 <p>Especialistas en Mecánica General y Aire Acondicionado Automotor. Ubicados en Muñecas 1014, CABA.</p>
@@ -79,24 +89,23 @@
             </div>
         </section>
 
-        <!-- Servicios -->
+        <!-- ===================== SERVICIOS ===================== -->
         <section id="servicios" class="services section">
             <div class="container">
-                <h2 class="section-title">Nuestros Servicios</h2>
+                <h2 class="section-title reveal">Nuestros Servicios</h2>
+                <p class="section-subtitle reveal">Soluciones mecánicas integrales con la calidad y confianza que tu vehículo merece.</p>
                 <div class="services-grid">
                     
-                    <!-- Tarjeta 1: Motor y Cajas -->
-                    <article class="service-card">
-                        <svg class="service-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FF9B54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <article class="service-card reveal reveal-delay-1">
+                        <svg class="service-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
                         </svg>
                         <h3>Mecánica de Motor y Cajas</h3>
                         <p>Reparación profunda, desarme y mantenimiento integral. Le devolvemos la vida y el rendimiento óptimo al corazón de tu vehículo con repuestos de primera línea.</p>
                     </article>
 
-                    <!-- Tarjeta 2: Suspensión y Tren Delantero -->
-                    <article class="service-card">
-                        <svg class="service-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FF9B54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <article class="service-card reveal reveal-delay-2">
+                        <svg class="service-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"></circle>
                             <circle cx="12" cy="12" r="3"></circle>
                             <line x1="12" y1="2" x2="12" y2="9"></line>
@@ -107,9 +116,8 @@
                         <p>Reemplazo de amortiguadores, bujes, rótulas y corrección de geometría. Garantizamos un andar suave, preciso y, sobre todo, seguro para la ciudad y la ruta.</p>
                     </article>
 
-                    <!-- Tarjeta 3: Servicio Pre-VTV -->
-                    <article class="service-card">
-                        <svg class="service-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FF9B54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <article class="service-card reveal reveal-delay-3">
+                        <svg class="service-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
                             <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
                             <path d="M9 14l2 2 4-4"></path>
@@ -118,18 +126,16 @@
                         <p>Chequeo preventivo integral de frenos, luces, emisión de gases y tren delantero. Te preparamos para que apruebes la inspección sin demoras ni sorpresas.</p>
                     </article>
 
-                    <!-- Tarjeta 4: Mantenimiento Lube -->
-                    <article class="service-card">
-                        <svg class="service-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FF9B54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <article class="service-card reveal reveal-delay-4">
+                        <svg class="service-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"></path>
                         </svg>
                         <h3>Service de Mantenimiento</h3>
                         <p>Cambio de aceite, reemplazo de filtros y control de fluidos. El mantenimiento periódico esencial para alargar la vida útil del motor y evitar desgastes prematuros.</p>
                     </article>
 
-                    <!-- Tarjeta 5: Aire Acondicionado -->
-                    <article class="service-card">
-                        <svg class="service-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FF9B54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <article class="service-card reveal reveal-delay-5">
+                        <svg class="service-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="2" y1="12" x2="22" y2="12"></line>
                             <line x1="12" y1="2" x2="12" y2="22"></line>
                             <path d="M20 16l-4-4 4-4"></path>
@@ -141,9 +147,8 @@
                         <p>Carga de gas refrigerante, detección de fugas, reemplazo de filtros de habitáculo y reparación de compresores para que tu climatización rinda al máximo.</p>
                     </article>
 
-                    <!-- Tarjeta 6: Diagnóstico Computarizado -->
-                    <article class="service-card">
-                        <svg class="service-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FF9B54" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <article class="service-card reveal reveal-delay-6">
+                        <svg class="service-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
                             <line x1="8" y1="21" x2="16" y2="21"></line>
                             <line x1="12" y1="17" x2="12" y2="21"></line>
@@ -157,34 +162,57 @@
             </div>
         </section>
 
-        <!-- Marcas (Carrusel con Iconos SimpleIcons) -->
-        <section id="marcas" class="brands section">
+        <!-- ===================== GALERÍA CURADA ===================== -->
+        <section id="galeria" class="gallery section">
             <div class="container">
-                <h2 class="section-title">Marcas con las que trabajamos</h2>
-            </div>
-            <div class="carousel-container">
-                <div class="carousel-track" id="carouselTrack">
-                    <div class="brand-item"><img src="https://cdn.simpleicons.org/volkswagen/FF9B54" alt="Volkswagen" class="brand-logo" loading="lazy"></div>
-                    <div class="brand-item"><img src="https://cdn.simpleicons.org/peugeot/FF9B54" alt="Peugeot" class="brand-logo" loading="lazy"></div>
-                    <div class="brand-item"><img src="https://cdn.simpleicons.org/renault/FF9B54" alt="Renault" class="brand-logo" loading="lazy"></div>
-                    <div class="brand-item"><img src="https://cdn.simpleicons.org/fiat/FF9B54" alt="Fiat" class="brand-logo" loading="lazy"></div>
-                    <div class="brand-item"><img src="https://cdn.simpleicons.org/ford/FF9B54" alt="Ford" class="brand-logo" loading="lazy"></div>
-                    <div class="brand-item"><img src="https://cdn.simpleicons.org/chevrolet/FF9B54" alt="Chevrolet" class="brand-logo" loading="lazy"></div>
-                    <div class="brand-item"><img src="https://cdn.simpleicons.org/mercedesbenz/FF9B54" alt="Mercedes Benz" class="brand-logo" loading="lazy"></div>
-                    <div class="brand-item"><img src="https://cdn.simpleicons.org/audi/FF9B54" alt="Audi" class="brand-logo" loading="lazy"></div>
-                    <div class="brand-item"><img src="https://cdn.simpleicons.org/bmw/FF9B54" alt="BMW" class="brand-logo" loading="lazy"></div>
-                    <div class="brand-item"><img src="https://cdn.simpleicons.org/citroen/FF9B54" alt="Citroën" class="brand-logo" loading="lazy"></div>
-                    <div class="brand-item"><img src="https://cdn.simpleicons.org/toyota/FF9B54" alt="Toyota" class="brand-logo" loading="lazy"></div>
-                    <div class="brand-item"><img src="https://cdn.simpleicons.org/honda/FF9B54" alt="Honda" class="brand-logo" loading="lazy"></div>
+                <h2 class="section-title reveal">Nuestro Trabajo</h2>
+                <p class="section-subtitle reveal">Calidad que se ve. Cada trabajo es una muestra de compromiso con tu vehículo.</p>
+                <div class="gallery-grid" id="galleryGrid">
+                    <!-- JS inyecta dinámicamente las 6 imágenes del día -->
+                </div>
+                <div class="gallery-cta reveal">
+                    <a href="https://instagram.com/taller.sosa2022" target="_blank" rel="noopener noreferrer">
+                        Seguinos en Instagram
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Ubicación / Google Maps -->
+        <!-- ===================== MARCAS (Carrusel) ===================== -->
+        <section id="marcas" class="brands section">
+            <div class="container">
+                <h2 class="section-title reveal">Marcas con las que trabajamos</h2>
+                <p class="section-subtitle reveal">Experiencia comprobada en las marcas más populares del mercado argentino.</p>
+            </div>
+            <div class="carousel-container reveal">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="brand-item"><div class="brand-logo" style="-webkit-mask-image: url('./assets/brands/volkswagen.svg'); mask-image: url('./assets/brands/volkswagen.svg');" title="Volkswagen"></div></div>
+                    <div class="brand-item"><div class="brand-logo" style="-webkit-mask-image: url('./assets/brands/peugeot.svg'); mask-image: url('./assets/brands/peugeot.svg');" title="Peugeot"></div></div>
+                    <div class="brand-item"><div class="brand-logo" style="-webkit-mask-image: url('./assets/brands/renault.svg'); mask-image: url('./assets/brands/renault.svg');" title="Renault"></div></div>
+                    <div class="brand-item"><div class="brand-logo" style="-webkit-mask-image: url('./assets/brands/fiat.svg'); mask-image: url('./assets/brands/fiat.svg');" title="Fiat"></div></div>
+                    <div class="brand-item"><div class="brand-logo" style="-webkit-mask-image: url('./assets/brands/ford.svg'); mask-image: url('./assets/brands/ford.svg');" title="Ford"></div></div>
+                    <div class="brand-item"><div class="brand-logo" style="-webkit-mask-image: url('./assets/brands/chevrolet.svg'); mask-image: url('./assets/brands/chevrolet.svg');" title="Chevrolet"></div></div>
+                    <div class="brand-item"><div class="brand-logo" style="-webkit-mask-image: url('./assets/brands/mercedes.svg'); mask-image: url('./assets/brands/mercedes.svg');" title="Mercedes Benz"></div></div>
+                    <div class="brand-item"><div class="brand-logo" style="-webkit-mask-image: url('./assets/brands/bmw.svg'); mask-image: url('./assets/brands/bmw.svg');" title="BMW"></div></div>
+                    <div class="brand-item"><div class="brand-logo" style="-webkit-mask-image: url('./assets/brands/citroen.svg'); mask-image: url('./assets/brands/citroen.svg');" title="Citroën"></div></div>
+                    <div class="brand-item"><div class="brand-logo" style="-webkit-mask-image: url('./assets/brands/toyota.svg'); mask-image: url('./assets/brands/toyota.svg');" title="Toyota"></div></div>
+                    <div class="brand-item"><div class="brand-logo" style="-webkit-mask-image: url('./assets/brands/honda.svg'); mask-image: url('./assets/brands/honda.svg');" title="Honda"></div></div>
+                    <div class="brand-item"><div class="brand-logo" style="-webkit-mask-image: url('./assets/brands/audi.svg'); mask-image: url('./assets/brands/audi.svg');" title="Audi"></div></div>
+                    <div class="brand-item"><div class="brand-logo" style="-webkit-mask-image: url('./assets/brands/nissan.svg'); mask-image: url('./assets/brands/nissan.svg');" title="Nissan"></div></div>
+                    <div class="brand-item"><div class="brand-logo" style="-webkit-mask-image: url('./assets/brands/hyundai.svg'); mask-image: url('./assets/brands/hyundai.svg');" title="Hyundai"></div></div>
+                    <div class="brand-item"><div class="brand-logo" style="-webkit-mask-image: url('./assets/brands/kia.svg'); mask-image: url('./assets/brands/kia.svg');" title="Kia"></div></div>
+                    <div class="brand-item"><div class="brand-logo" style="-webkit-mask-image: url('./assets/brands/jeep.svg'); mask-image: url('./assets/brands/jeep.svg');" title="Jeep"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== UBICACIÓN / GOOGLE MAPS ===================== -->
         <section id="ubicacion" class="location section">
             <div class="container">
-                <h2 class="section-title">Dónde Encontrarnos</h2>
-                <div class="map-container">
+                <h2 class="section-title reveal">Dónde Encontrarnos</h2>
+                <p class="section-subtitle reveal">Estamos en el corazón de CABA, fácil acceso desde cualquier punto de la ciudad.</p>
+                <div class="map-container reveal">
                     <iframe 
                         src="https://maps.google.com/maps?q=Muñecas%201014,%20CABA,%20Argentina&t=&z=16&ie=UTF8&iwloc=&output=embed" 
                         width="100%" 
@@ -198,81 +226,130 @@
                 </div>
             </div>
         </section>
-
-        <!-- Redes Sociales -->
-        <section class="socials section">
-            <div class="container socials-content">
-                <h2>Seguinos en nuestras redes</h2>
-                <p>Enterate de nuestros trabajos diarios, tips de mecánica y promociones.</p>
-                <div class="social-links">
-                    <a href="https://instagram.com/taller.sosa2022" target="_blank" rel="noopener noreferrer" class="social-card ig">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                        </svg>
-                        <span>Taller Sosa</span>
-                    </a>
-                    <a href="https://tiktok.com/@taller.sosa" target="_blank" rel="noopener noreferrer" class="social-card tk">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
-                        </svg>
-                        <span>Taller Sosa</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contacto (Formulario) -->
-        <section id="contacto" class="contact section">
-            <div class="container">
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <h2 class="section-title" style="text-align: left;">Comunicate con nosotros</h2>
-                        <p>Completá el formulario y te responderemos por WhatsApp para coordinar tu turno.</p>
-                        <ul class="info-list">
-                            <li><strong>Dirección:</strong> Muñecas 1014, CABA</li>
-                            <li><strong>Teléfono:</strong> +54 9 11 5579-1196</li>
-                            <li><strong>Horario:</strong> Lun a Vie de 8:00 a 18:00 hs</li>
-                        </ul>
-                    </div>
-                    <div class="contact-form-wrapper">
-                        <form id="waForm" class="form" novalidate>
-                            <div class="form-group">
-                                <label for="name">Nombre y Apellido *</label>
-                                <input type="text" id="name" name="name" required pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,50}$" placeholder="Ej. Juan Pérez">
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="brand">Marca *</label>
-                                    <input type="text" id="brand" name="brand" required maxlength="30" placeholder="Ej. Ford">
-                                </div>
-                                <div class="form-group">
-                                    <label for="model">Modelo *</label>
-                                    <input type="text" id="model" name="model" required maxlength="30" placeholder="Ej. Fiesta">
-                                </div>
-                                <div class="form-group">
-                                    <label for="year">Año *</label>
-                                    <input type="number" id="year" name="year" required min="1950" max="2027" placeholder="Ej. 2018">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="query">Descripción de la consulta *</label>
-                                <textarea id="query" name="query" required maxlength="300" rows="4" placeholder="Describí el problema o el servicio que necesitas..."></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">Enviar por WhatsApp</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <footer class="footer">
-        <div class="container footer-content">
+    <!-- ===================== FOOTER UNIFICADO ===================== -->
+    <footer id="contacto" class="footer-unified">
+        
+        <div class="container">
+            <!-- Formulario de Contacto -->
+            <div class="contact-unified-grid reveal">
+                <div class="contact-unified-info">
+                    <h2>Comunicáte <span>con nosotros</span></h2>
+                    <p>Completá el formulario y te responderemos a la brevedad por WhatsApp para coordinar tu turno.</p>
+                    <ul class="info-list">
+                        <li><strong>Dirección:</strong> Muñecas 1014, CABA</li>
+                        <li><strong>Teléfono:</strong> +54 9 11 5579-1196</li>
+                        <li><strong>Horario:</strong> Lun a Vie de 8:00 a 18:00 hs</li>
+                    </ul>
+                </div>
+                
+                <div class="contact-unified-form">
+                    <form id="waForm" class="form-unified" novalidate>
+                        <!-- Honeypot Anti-Bot (invisible, DOM-present) -->
+                        <div class="hp-field" aria-hidden="true">
+                            <label for="website">Website</label>
+                            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Nombre y Apellido *</label>
+                            <input type="text" id="name" name="name" required pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]{3,50}$" placeholder="Ej. Juan Pérez" autocomplete="name">
+                            <span class="field-error" id="nameError" aria-live="polite"></span>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="brand">Marca *</label>
+                                <input type="text" id="brand" name="brand" required maxlength="30" placeholder="Ej. Ford">
+                                <span class="field-error" id="brandError" aria-live="polite"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="model">Modelo *</label>
+                                <input type="text" id="model" name="model" required maxlength="30" placeholder="Ej. Fiesta">
+                                <span class="field-error" id="modelError" aria-live="polite"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="year">Año *</label>
+                                <input type="number" id="year" name="year" required min="1950" max="2027" placeholder="Ej. 2018">
+                                <span class="field-error" id="yearError" aria-live="polite"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="query">Descripción de la consulta *</label>
+                            <textarea id="query" name="query" required maxlength="300" rows="3" placeholder="Describí el problema o el servicio que necesitas..."></textarea>
+                            <span class="field-error" id="queryError" aria-live="polite"></span>
+                        </div>
+                        <button type="submit" class="btn btn-dark btn-full" id="submitBtn">
+                            Enviar por WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Línea Divisoria -->
+            <hr class="footer-divider">
+
+            <!-- Menú Inferior Footer -->
+            <div class="footer-content">
+                <div class="footer-col brand-col">
+                    <a href="#" class="logo footer-logo">Taller <span>Sosa</span></a>
+                    <div class="footer-socials">
+                        <a href="https://instagram.com/taller.sosa2022" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="https://tiktok.com/@taller.sosa" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Estamos en</h4>
+                    <ul>
+                        <li>Muñecas 1014</li>
+                        <li>Ciudad Autónoma de Buenos Aires</li>
+                        <li>Argentina</li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navegación</h4>
+                    <ul>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                        <li><a href="#marcas">Marcas</a></li>
+                        <li><a href="#ubicacion">Mapa</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Horarios</h4>
+                    <ul>
+                        <li>Lunes a Viernes</li>
+                        <li>08:00 hs a 18:00 hs</li>
+                        <li>Sábados y Domingos cerrados</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
             <p>&copy; 2026 Taller Sosa. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" aria-label="Volver arriba" title="Volver arriba">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Vista ampliada de imagen">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar imagen">&times;</button>
+        <img src="" alt="Vista ampliada" id="lightboxImg">
+    </div>
 
     <script src="./js/main.js"></script>
 </body>
